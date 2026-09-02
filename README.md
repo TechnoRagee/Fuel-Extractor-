@@ -1,43 +1,48 @@
-# ⛽ Fuel Extractor - Indian Oil Corporation Limited (IOCL) Locator Scraper
+# ⛽ Fuel Extractor - India Fuel Station Scrapers (IOCL & BPCL)
 
-High-performance, resilient scraper and data extraction pipeline for all **Indian Oil Corporation Limited (IOCL)** retail fuel stations (~39,555 pumps) and Indane LPG distributorships (~14,500 agencies) across India from [locator.iocl.com](https://locator.iocl.com/).
+High-performance, resilient scraper and data extraction pipeline for India's major oil marketing companies:
+1. **Indian Oil Corporation Limited (IOCL)**: All retail outlets and petrol pumps (~39,555 pumps).
+2. **Bharat Petroleum Corporation Limited (BPCL)**: All retail outlets and petrol pumps (~20,000+ pumps) via official REST API.
 
 ---
 
 ## 🚀 Features
 
-- **Pre-indexed Sitemap Discovery**: Includes all 39,555 outlet permalinks pre-cached in `discovered_urls.json`.
-- **Rich JSON-LD Schema Extraction**: Extracts State, City, Locality, Pincode, GPS Coordinates (Latitude/Longitude), Dealer Name, Contact Person, Phone, Email, Operating Hours, Amenities, and Customer Ratings.
-- **Resilient & Anti-Blocking**: Browser header simulation, polite rate-limiting, and automatic cooldown.
-- **Dual-Storage & Instant Resume**: Real-time batch writes to SQLite (`iocl_outlets.db`) and CSV (`iocl_outlets.csv`) with checkpoint support (`checkpoint.json`).
-- **Excel Formatter**: Built-in script (`db_to_excel.py`) that generates styled Excel reports with auto-sized columns and state-wise breakdown summaries.
+### 🔵 Indian Oil (IOCL)
+- **Pre-indexed Permalinks**: Discovered 39,555 outlet URLs in `discovered_urls.json`.
+- **JSON-LD Structured Extraction**: State, City, Locality, Pincode, GPS (Lat/Lon), Dealer Name, Contact Person, Phone, Email, Timings, Amenities, and Ratings.
+- **Resilient & Anti-Blocking**: Polite rate-limiting (`--delay`), auto-cooldown, SQLite database (`iocl_outlets.db`), and formatted Excel export (`db_to_excel.py`).
+
+### 🟡 Bharat Petroleum (BPCL)
+- **Official High-Speed REST API**: Direct integration with BPCL CEP REST API (`https://api.cep.bpcl.in/retail/v2/bpcl/retail/rolocators`).
+- **OAuth 2.0 Auto-Refresh**: Fully automated headless token generation and refresh.
+- **Nationwide Spatial Mesh**: Intelligent coordinate grid covering all 28 states, 8 UTs, and ~750 districts.
+- **Rich Schema**: Station Name, Address Line 1 & 2, City, District, State, Pincode, GPS Coords, Cellphone, Email, Available Fuels (Speed, Petrol, Diesel, CNG), and Amenities.
+- **Multi-Tab Excel Report**: Built-in state distribution summary and individual state sheets with BPCL navy branding (`bpcl_db_to_excel.py`).
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-├── iocl_scraper.py               # Main multithreaded extraction script
-├── db_to_excel.py                # Database to styled Excel (.xlsx) converter
-├── discovered_urls.json          # Cached inventory of 39,555 outlet URLs
-├── IOCL_LOCATOR_SCRAPING_GUIDE.md# Comprehensive technical specification & documentation
-├── iocl_outlets.db               # SQLite database (auto-generated)
-├── iocl_outlets.csv              # CSV dataset (auto-generated)
-└── iocl_outlets.xlsx             # Formatted Excel report (auto-generated)
+├── iocl_scraper.py               # Main multithreaded IOCL scraper
+├── db_to_excel.py                # IOCL database to Excel converter
+├── bpcl_scraper.py               # Main multithreaded BPCL scraper (REST API)
+├── bpcl_db_to_excel.py           # BPCL database to multi-sheet Excel & CSV converter
+├── discovered_urls.json          # Cached inventory of 39,555 IOCL URLs
+├── IOCL_LOCATOR_SCRAPING_GUIDE.md# IOCL technical specification & guide
+├── iocl_outlets.db               # IOCL SQLite database
+├── bpcl_outlets.db               # BPCL SQLite database
+├── bpcl_outlets.xlsx             # Formatted BPCL Excel report
+└── bpcl_outlets.csv              # Formatted BPCL CSV dataset
 ```
 
 ---
 
-## 🛠️ Installation & Setup
+## 🛠️ Installation & Dependencies
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/TechnoRagee/Fuel-Extractor-.git
-   cd Fuel-Extractor-
-   ```
-
-2. **Dependencies**:
-   - The scraper uses **Python standard libraries only** (no pip packages needed).
+1. **Dependencies**:
+   - Both scrapers use standard Python libraries.
    - For Excel export:
      ```bash
      pip install pandas openpyxl
@@ -47,47 +52,52 @@ High-performance, resilient scraper and data extraction pipeline for all **India
 
 ## ⚡ Usage
 
-### 1. Run the Scraper
-To scrape fuel stations with recommended safe rate-limiting:
-```bash
-python iocl_scraper.py --workers 10 --delay 0.15
-```
+### 🟡 Bharat Petroleum (BPCL) Scraper
 
-Options:
-- `--workers <int>`: Number of concurrent threads (Default: `8`).
-- `--delay <float>`: Polite delay in seconds per request (Default: `0.2`).
-- `--limit <int>`: Limit number of outlets for quick testing (e.g. `--limit 50`).
+1. **Run Scraper**:
+   ```bash
+   python bpcl_scraper.py --workers 6 --delay 0.2
+   ```
+   Options:
+   - `--workers <int>`: Number of concurrent threads (Default: `6`).
+   - `--delay <float>`: Polite delay in seconds per request (Default: `0.2`).
+   - `--radius <int>`: Search radius in meters (Default: `40000` = 40 km).
+   - `--max-points <int>`: Limit number of grid points for quick runs (e.g. `--max-points 25`).
+   - `--reset`: Reset database and checkpoint to start fresh.
 
-### 2. Export to Excel
-Generate a formatted Excel workbook with summary statistics:
-```bash
-python db_to_excel.py
-```
-Or generate individual worksheet tabs for each State:
-```bash
-python db_to_excel.py --separate-sheets
-```
+2. **Export to Multi-Sheet Excel & CSV**:
+   ```bash
+   python bpcl_db_to_excel.py
+   ```
 
 ---
 
-## 📊 Extracted Data Schema
+### 🔵 Indian Oil (IOCL) Scraper
 
-| Field Name | Type | Description |
+1. **Run Scraper**:
+   ```bash
+   python iocl_scraper.py --workers 8 --delay 0.2
+   ```
+
+2. **Export to Excel**:
+   ```bash
+   python db_to_excel.py
+   ```
+
+---
+
+## 📊 Extracted Data Schemas
+
+### BPCL Schema
+| Field Name | Description | Example |
 | :--- | :--- | :--- |
-| `outlet_id` | `VARCHAR(32)` | Unique IOCL station identifier |
-| `outlet_name` | `VARCHAR(255)` | Brand entity name (`IndianOil`) |
-| `dealer_name` | `VARCHAR(255)` | Dealership / trade name |
-| `state` | `VARCHAR(100)` | State / Union Territory |
-| `city` | `VARCHAR(100)` | District / City |
-| `locality` | `VARCHAR(100)` | Locality / Area / Sector |
-| `street_address` | `TEXT` | Full street address |
-| `pincode` | `VARCHAR(12)` | Postal PIN code |
-| `latitude` / `longitude` | `DECIMAL` | Precise GPS coordinates |
-| `telephone` | `VARCHAR(64)` | Official phone / contact number |
-| `email` | `VARCHAR(128)` | Dealership email |
-| `contact_person` | `VARCHAR(128)` | Proprietor / Station manager name |
-| `opening_hours` | `TEXT` | Weekly operating timings |
-| `amenities` | `TEXT` | Clean water, air, toilets, EV charging, etc. |
-| `rating_value` | `DECIMAL` | Average rating score |
-| `rating_count` | `INTEGER` | Total customer ratings |
-| `page_url` / `map_url` | `TEXT` | Permalink & Google Map link |
+| `ro_id` | Unique Retail Outlet ID | `0000185560` |
+| `name` / `display_name` | Dealership / Station Name | `SHREE SAI PETROLEUM BHARAT PETROLEUM DEALERS` |
+| `line1` / `line2` | Address Lines | `PEN KHOPOLI ROAD, AT- HORALE VILLAGE` |
+| `town` / `district` | City & District | `KHALAPUR, RAIGAD` |
+| `state` / `state_iso` | State & ISO Code | `Maharashtra (IN-20)` |
+| `postal_code` | Pincode | `410203` |
+| `cellphone` / `email` | Contact Info | `9920666021, shreesa185560@bpclretail.in` |
+| `latitude` / `longitude`| GPS Coordinates | `18.775375, 73.228878` |
+| `fuels_available` | Available Fuels | `DIESEL, PETROL, SPEED` |
+| `amenities` | Station Amenities | `Automation, Pure_Sure, Air_Filling, 24/7` |
