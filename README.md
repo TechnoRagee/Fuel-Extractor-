@@ -1,8 +1,9 @@
-# ⛽ Fuel Extractor - India Fuel Station Scrapers (IOCL & BPCL)
+# ⛽ Fuel Extractor - India Fuel Station Scrapers (IOCL, BPCL & HPCL)
 
-High-performance, resilient scraper and data extraction pipeline for India's major oil marketing companies:
+High-performance, resilient scraper and data extraction pipeline for India's "Big Three" oil marketing companies:
 1. **Indian Oil Corporation Limited (IOCL)**: All retail outlets and petrol pumps (~39,555 pumps).
-2. **Bharat Petroleum Corporation Limited (BPCL)**: All retail outlets and petrol pumps (~20,000+ pumps) via official REST API.
+2. **Bharat Petroleum Corporation Limited (BPCL)**: All retail outlets and petrol pumps (~22,000+ pumps) via official REST API.
+3. **Hindustan Petroleum Corporation Limited (HPCL)**: All retail outlets and petrol pumps (~24,026 pumps) via SingleInterface locator.
 
 ---
 
@@ -15,57 +16,78 @@ High-performance, resilient scraper and data extraction pipeline for India's maj
 
 ### 🟡 Bharat Petroleum (BPCL)
 - **Official High-Speed REST API**: Direct integration with BPCL CEP REST API (`https://api.cep.bpcl.in/retail/v2/bpcl/retail/rolocators`).
-- **OAuth 2.0 Auto-Refresh**: Fully automated headless token generation and refresh.
-- **Nationwide Spatial Mesh**: Intelligent coordinate grid covering all 28 states, 8 UTs, and ~750 districts.
+- **OAuth 2.0 Auto-Refresh**: Fully automated headless token generation and background refresh.
+- **Nationwide Spatial Mesh**: Intelligent 50 km coordinate grid covering all 28 states, 8 UTs, and ~750 districts.
 - **Rich Schema**: Station Name, Address Line 1 & 2, City, District, State, Pincode, GPS Coords, Cellphone, Email, Available Fuels (Speed, Petrol, Diesel, CNG), and Amenities.
 - **Multi-Tab Excel Report**: Built-in state distribution summary and individual state sheets with BPCL navy branding (`bpcl_db_to_excel.py`).
+
+### 🔴 Hindustan Petroleum (HPCL)
+- **Pre-indexed Sitemaps**: Discovered all 24,026 outlet permalinks across 1,038 district archives in `hpcl_discovered_urls.json`.
+- **Schema.org Structured Extraction**: GasStation and BreadcrumbList JSON-LD graphs with Dealership Name, Address, City, State, Pincode, GPS Latitude/Longitude, Phone, Email, Contact Person, and Map links.
+- **Multi-Tab Excel Report**: State-wise distribution summary and top state worksheets with HPCL crimson red branding (`hpcl_db_to_excel.py`).
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-├── iocl_scraper.py               # Main multithreaded IOCL scraper
-├── db_to_excel.py                # IOCL database to Excel converter
-├── bpcl_scraper.py               # Main multithreaded BPCL scraper (REST API)
-├── bpcl_db_to_excel.py           # BPCL database to multi-sheet Excel & CSV converter
-├── discovered_urls.json          # Cached inventory of 39,555 IOCL URLs
-├── IOCL_LOCATOR_SCRAPING_GUIDE.md# IOCL technical specification & guide
-├── iocl_outlets.db               # IOCL SQLite database
+├── iocl_scraper.py               # IOCL scraper
+├── db_to_excel.py                # IOCL Excel exporter
+├── discovered_urls.json          # 39,555 IOCL URLs
+│
+├── bpcl_scraper.py               # BPCL scraper (REST API)
+├── bpcl_db_to_excel.py           # BPCL Excel exporter
+├── bpcl_checkpoint.json          # BPCL resumable checkpoint
 ├── bpcl_outlets.db               # BPCL SQLite database
 ├── bpcl_outlets.xlsx             # Formatted BPCL Excel report
-└── bpcl_outlets.csv              # Formatted BPCL CSV dataset
+│
+├── hpcl_scraper.py               # HPCL scraper
+├── hpcl_db_to_excel.py           # HPCL Excel exporter
+├── hpcl_discovered_urls.json     # 24,026 HPCL URLs
+├── hpcl_checkpoint.json          # HPCL resumable checkpoint
+├── hpcl_outlets.db               # HPCL SQLite database
+└── hpcl_outlets.xlsx             # Formatted HPCL Excel report
 ```
 
 ---
 
 ## 🛠️ Installation & Dependencies
 
-1. **Dependencies**:
-   - Both scrapers use standard Python libraries.
-   - For Excel export:
-     ```bash
-     pip install pandas openpyxl
-     ```
+```bash
+pip install pandas openpyxl
+```
 
 ---
 
 ## ⚡ Usage
 
+### 🔴 Hindustan Petroleum (HPCL) Scraper
+
+1. **Run Scraper**:
+   ```bash
+   python hpcl_scraper.py --workers 8 --delay 0.2
+   ```
+   Options:
+   - `--workers <int>`: Number of concurrent threads (Default: `8`).
+   - `--delay <float>`: Polite delay in seconds per request (Default: `0.2`).
+   - `--limit <int>`: Limit number of outlets for quick runs (e.g. `--limit 50`).
+   - `--reset`: Reset database and checkpoint to start fresh.
+
+2. **Export to Multi-Sheet Excel & CSV**:
+   ```bash
+   python hpcl_db_to_excel.py
+   ```
+
+---
+
 ### 🟡 Bharat Petroleum (BPCL) Scraper
 
 1. **Run Scraper**:
    ```bash
-   python bpcl_scraper.py --workers 6 --delay 0.2
+   python bpcl_scraper.py --workers 4 --delay 0.5
    ```
-   Options:
-   - `--workers <int>`: Number of concurrent threads (Default: `6`).
-   - `--delay <float>`: Polite delay in seconds per request (Default: `0.2`).
-   - `--radius <int>`: Search radius in meters (Default: `40000` = 40 km).
-   - `--max-points <int>`: Limit number of grid points for quick runs (e.g. `--max-points 25`).
-   - `--reset`: Reset database and checkpoint to start fresh.
 
-2. **Export to Multi-Sheet Excel & CSV**:
+2. **Export to Excel & CSV**:
    ```bash
    python bpcl_db_to_excel.py
    ```
