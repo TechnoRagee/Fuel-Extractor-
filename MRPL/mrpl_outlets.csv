@@ -1,0 +1,173 @@
+﻿Station ID,Station / Location Name,Brand,District / Area,State,Diesel Price (₹/L),Petrol Price (₹/L),Original Portal Location Text,Extracted At
+MRPL-KA-039,Begur (Bangalore Urban),MRPL HiQ,,Karnataka,90.99,102.91,Begur (Bangalore Urban),2026-09-03 13:28:15
+MRPL-KA-008,Cargo Gate,MRPL HiQ,,Karnataka,90.2,102.08,Cargo Gate,2026-09-03 13:28:15
+MRPL-KA-111,Chikkaballapur,MRPL HiQ,,Karnataka,91.05,102.98,Chikkaballapur,2026-09-03 13:28:15
+MRPL-KA-021,Gottigere (Bangalore Urban),MRPL HiQ,,Karnataka,90.98,102.9,Gottigere (Bangalore Urban),2026-09-03 13:28:15
+MRPL-KA-016,Hosapalya,MRPL HiQ,,Karnataka,91.14,103.07,Hosapalya,2026-09-03 13:28:15
+MRPL-KA-007,Hubli,MRPL HiQ,,Karnataka,90.81,102.68,Hubli,2026-09-03 13:28:15
+MRPL-KA-012,Kadri,MRPL HiQ,,Karnataka,90.2,102.08,Kadri,2026-09-03 13:28:15
+MRPL-KA-023,Kattihosahalli (Bangalore Rural),MRPL HiQ,,Karnataka,91.23,103.18,Kattihosahalli (Bangalore Rural),2026-09-03 13:28:15
+MRPL-KA-006,Maddur,MRPL HiQ,,Karnataka,91.02,102.94,Maddur,2026-09-03 13:28:15
+MRPL-KA-011,Mandya,MRPL HiQ,,Karnataka,90.85,102.75,Mandya,2026-09-03 13:28:15
+MRPL-KA-015,Medahalli,MRPL HiQ,,Karnataka,90.99,102.91,Medahalli,2026-09-03 13:28:15
+MRPL-KA-014,Panambur,MRPL HiQ,,Karnataka,90.2,102.08,Panambur,2026-09-03 13:28:15
+MRPL-KA-022,Rajrajeshwari Nagar(Bangalore Urban),MRPL HiQ,,Karnataka,90.99,102.91,RajRajeshwari Nagar(Bangalore Urban),2026-09-03 13:28:15
+MRPL-KA-069,Vijayapura,MRPL HiQ,,Karnataka,90.81,102.69,Vijayapura,2026-09-03 13:28:15
+MRPL-KA-024,Visveshwaraya Layout,MRPL HiQ,,Karnataka,90.98,102.9,Visveshwaraya Layout,2026-09-03 13:28:15
+MRPL-KA-123,Albal -Jamkhandi,MRPL HiQ,Bagalkot,Karnataka,0.0,0.0,"Albal -Jamkhandi ,Bagalkot",2026-09-03 13:28:15
+MRPL-KA-093,Badagandi-Bilagi,MRPL HiQ,Bagalkot,Karnataka,91.33,103.26,"Badagandi-Bilagi, Bagalkot",2026-09-03 13:28:15
+MRPL-KA-080,Budni-Mahalingpur,MRPL HiQ,Bagalkot,Karnataka,91.58,103.54,"Budni-Mahalingpur, Bagalkot",2026-09-03 13:28:15
+MRPL-KA-050,Attibele,MRPL HiQ,Bangalore,Karnataka,90.99,102.91,"Attibele,Bangalore",2026-09-03 13:28:15
+MRPL-KA-049,Doddaladmara,MRPL HiQ,Bangalore,Karnataka,90.98,102.9,"Doddaladmara, Bangalore",2026-09-03 13:28:15
+MRPL-KA-059,Magadi Road,MRPL HiQ,Bangalore,Karnataka,91.05,102.97,"Magadi Road, Bangalore",2026-09-03 13:28:15
+MRPL-KA-058,Mvit Cross,MRPL HiQ,Bangalore,Karnataka,90.99,102.91,"MVIT cross, Bangalore",2026-09-03 13:28:15
+MRPL-KA-031,Rajankunte,MRPL HiQ,Bangalore,Karnataka,90.98,102.9,"Rajankunte, Bangalore",2026-09-03 13:28:15
+MRPL-KA-072,Nagarbhavi,MRPL HiQ,Bangalore  Urban,Karnataka,90.98,102.9,"Nagarbhavi ,Bangalore  Urban",2026-09-03 13:28:15
+MRPL-KA-084,Devanahalli,MRPL HiQ,Bangalore Rural,Karnataka,90.88,102.79,"Devanahalli, Bangalore Rural",2026-09-03 13:28:15
+MRPL-KA-115,Nelamangala,MRPL HiQ,Bangalore Rural,Karnataka,91.11,103.05,"Nelamangala,Bangalore Rural",2026-09-03 13:28:15
+MRPL-KA-041,Hesarghatta,MRPL HiQ,Bangalore Urban,Karnataka,90.98,102.9,"Hesarghatta, Bangalore Urban",2026-09-03 13:28:15
+MRPL-KA-083,Kumbalgodu,MRPL HiQ,Bangalore Urban,Karnataka,90.98,102.9,"kumbalgodu ,Bangalore Urban",2026-09-03 13:28:15
+MRPL-KA-107,Bommanal,MRPL HiQ,Belagavi,Karnataka,91.89,103.88,"Bommanal,Belagavi",2026-09-03 13:28:15
+MRPL-KA-066,Mullur-Ramdurga,MRPL HiQ,Belagavi,Karnataka,91.28,103.21,"Mullur-Ramdurga,Belagavi",2026-09-03 13:28:15
+MRPL-KA-106,Yamagarni,MRPL HiQ,Belagavi,Karnataka,91.5,103.44,"Yamagarni,Belagavi",2026-09-03 13:28:15
+MRPL-KA-060,Bhalki,MRPL HiQ,Bidar,Karnataka,91.64,103.6,"Bhalki,Bidar",2026-09-03 13:28:15
+MRPL-KA-094,Halli -Basavakalyan,MRPL HiQ,Bidar,Karnataka,91.49,103.44,"Halli -Basavakalyan, Bidar",2026-09-03 13:28:15
+MRPL-KA-118,Santhemarahalli (Honganuru),MRPL HiQ,Chamrajnagar,Karnataka,91.15,103.09,"Santhemarahalli (Honganuru),Chamrajnagar",2026-09-03 13:28:15
+MRPL-KA-102,Bashettihalli,MRPL HiQ,Chikkaballapur,Karnataka,90.89,102.81,"Bashettihalli ,Chikkaballapur",2026-09-03 13:28:15
+MRPL-KA-090,Thondebhavi,MRPL HiQ,Chikkaballapur,Karnataka,91.21,103.16,"Thondebhavi,CHikkaballapur",2026-09-03 13:28:15
+MRPL-KA-045,Chintamani,MRPL HiQ,Chikkaballapura,Karnataka,90.9,102.81,"Chintamani, Chikkaballapura",2026-09-03 13:28:15
+MRPL-KA-124,Chokkareddihalli,MRPL HiQ,Chikkaballapura,Karnataka,0.0,0.0,"Chokkareddihalli , Chikkaballapura",2026-09-03 13:28:15
+MRPL-KA-112,Pathakote,MRPL HiQ,Chikkaballapura,Karnataka,91.42,103.38,"Pathakote,Chikkaballapura",2026-09-03 13:28:15
+MRPL-KA-051,Ajjampura,MRPL HiQ,Chikkamagalur,Karnataka,92.15,104.02,"Ajjampura, Chikkamagalur",2026-09-03 13:28:15
+MRPL-KA-043,Shivani,MRPL HiQ,Chikkamagalur,Karnataka,92.29,104.22,"Shivani , Chikkamagalur",2026-09-03 13:28:15
+MRPL-KA-101,Doddachellur,MRPL HiQ,Chitradurga,Karnataka,92.19,104.08,"Doddachellur,Chitradurga",2026-09-03 13:28:15
+MRPL-KA-122,Javanagondanahalli,MRPL HiQ,Chitradurga,Karnataka,92.07,104.08,"Javanagondanahalli,Chitradurga",2026-09-03 13:28:15
+MRPL-KA-056,Metikurke-Hiriyur,MRPL HiQ,Chitradurga,Karnataka,92.19,104.07,"Metikurke-Hiriyur,Chitradurga",2026-09-03 13:28:15
+MRPL-KA-098,Nayakanahatti,MRPL HiQ,Chitradurga,Karnataka,92.17,104.03,"Nayakanahatti,Chitradurga",2026-09-03 13:28:15
+MRPL-KA-044,Parashurampura,MRPL HiQ,Chitradurga,Karnataka,92.19,104.08,"Parashurampura, Chitradurga",2026-09-03 13:28:15
+MRPL-KA-097,Rampura,MRPL HiQ,Chitradurga,Karnataka,92.23,104.14,"Rampura,Chitradurga",2026-09-03 13:28:15
+MRPL-KA-067,Sanikere,MRPL HiQ,Chitradurga,Karnataka,92.3,104.11,"Sanikere,Chitradurga",2026-09-03 13:28:15
+MRPL-KA-087,Sasalu Holla -Holalkere,MRPL HiQ,Chitradurga,Karnataka,92.02,103.8,"Sasalu holla -Holalkere , Chitradurga",2026-09-03 13:28:15
+MRPL-KA-010,Alankar-Perabe,MRPL HiQ,Dakshin Kannada,Karnataka,90.67,102.6,"Alankar-Perabe, Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-026,Kana,MRPL HiQ,Dakshin Kannada,Karnataka,90.2,102.08,"Kana, Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-110,Kariyanagal,MRPL HiQ,Dakshin Kannada,Karnataka,90.35,102.24,"Kariyanagal,Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-091,Kaval Paduru,MRPL HiQ,Dakshin Kannada,Karnataka,90.54,102.46,"Kaval Paduru, Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-078,Kuvettu-Guruvayankere,MRPL HiQ,Dakshin Kannada,Karnataka,90.68,102.61,"Kuvettu-guruvayankere, Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-034,Loretto,MRPL HiQ,Dakshin Kannada,Karnataka,90.36,102.24,Loretto-Dakshin Kannada,2026-09-03 13:28:15
+MRPL-KA-035,Mithur,MRPL HiQ,Dakshin Kannada,Karnataka,90.46,102.36,"Mithur, Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-109,Mooduperar,MRPL HiQ,Dakshin Kannada,Karnataka,90.19,102.06,"Mooduperar,Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-113,Naravi,MRPL HiQ,Dakshin Kannada,Karnataka,90.58,102.5,"Naravi,Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-055,Odilnala,MRPL HiQ,Dakshin Kannada,Karnataka,90.68,102.61,"Odilnala,Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-019,Padumarnadu,MRPL HiQ,Dakshin Kannada,Karnataka,90.4,102.29,"Padumarnadu, Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-116,Perne Panchayat,MRPL HiQ,Dakshin Kannada,Karnataka,90.66,102.52,"Perne Panchayat ,Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-077,Puttur,MRPL HiQ,Dakshin Kannada,Karnataka,90.61,102.53,Puttur-Dakshin Kannada,2026-09-03 13:28:15
+MRPL-KA-108,Sajipamooda,MRPL HiQ,Dakshin Kannada,Karnataka,90.62,102.54,"Sajipamooda,Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-062,Shirva-Kaup,MRPL HiQ,Dakshin Kannada,Karnataka,90.39,102.28,"Shirva-Kaup, Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-088,Someshwar-Ullal,MRPL HiQ,Dakshin Kannada,Karnataka,90.27,102.16,"Someshwar-Ullal , Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-114,Ullal,MRPL HiQ,Dakshin Kannada,Karnataka,90.2,102.09,"Ullal,Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-037,Uppinangady,MRPL HiQ,Dakshin Kannada,Karnataka,90.62,102.53,"Uppinangady, Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-018,Yekkar,MRPL HiQ,Dakshin Kannada,Karnataka,90.2,102.1,"Yekkar,Dakshin Kannada",2026-09-03 13:28:15
+MRPL-KA-127,Mavinakote,MRPL HiQ,Davanagere,Karnataka,0.0,0.0,"Mavinakote , Davanagere",2026-09-03 13:28:15
+MRPL-KA-092,Halebathi,MRPL HiQ,Davangere,Karnataka,92.17,104.04,"Halebathi, Davangere",2026-09-03 13:28:15
+MRPL-KA-042,Jarikatte,MRPL HiQ,Davangere,Karnataka,92.46,104.64,"Jarikatte, Davangere",2026-09-03 13:28:15
+MRPL-KA-040,Salabalu,MRPL HiQ,Davangere,Karnataka,92.2,104.08,"Salabalu, Davangere",2026-09-03 13:28:15
+MRPL-KA-119,Santhebennur,MRPL HiQ,Davangere,Karnataka,92.18,104.08,"Santhebennur,Davangere",2026-09-03 13:28:15
+MRPL-KA-085,Vagata,MRPL HiQ,Devangonthi,Karnataka,90.58,102.46,Vagata -Devangonthi -Bangalore Rural,2026-09-03 13:28:15
+MRPL-KA-052,Kottur,MRPL HiQ,Hagaribommanahalli-Vijayanagar,Karnataka,92.23,104.09,"Kottur, Hagaribommanahalli-Vijayanagar",2026-09-03 13:28:15
+MRPL-KA-053,Nicchapura,MRPL HiQ,Harapanahalli-Vijayanagar,Karnataka,92.1,103.87,"Nicchapura, Harapanahalli-Vijayanagar",2026-09-03 13:28:15
+MRPL-KA-057,Balaguppe,MRPL HiQ,Hassan,Karnataka,91.02,103.14,"Balaguppe,Hassan",2026-09-03 13:28:15
+MRPL-KA-073,Katihalli,MRPL HiQ,Hassan,Karnataka,90.59,102.58,"Katihalli ,Hassan",2026-09-03 13:28:15
+MRPL-KA-117,Mallithammanahalli,MRPL HiQ,Hassan,Karnataka,91.01,103.14,"Mallithammanahalli,Hassan",2026-09-03 13:28:15
+MRPL-KA-065,Udayapura,MRPL HiQ,Hassan,Karnataka,90.83,102.91,"Udayapura,Hassan",2026-09-03 13:28:15
+MRPL-KA-048,Devagiri-Yellapur,MRPL HiQ,Haveri,Karnataka,91.45,103.4,"Devagiri-Yellapur, Haveri",2026-09-03 13:28:15
+MRPL-KA-081,Lingadevarakoppa,MRPL HiQ,Haveri,Karnataka,91.79,103.77,"Lingadevarakoppa, Haveri",2026-09-03 13:28:15
+MRPL-KA-079,Aland,MRPL HiQ,Kalaburagi,Karnataka,91.27,103.14,"Aland, Kalaburagi",2026-09-03 13:28:15
+MRPL-KA-103,Sedam,MRPL HiQ,Kalaburgi,Karnataka,91.2,103.12,"Sedam,Kalaburgi",2026-09-03 13:28:15
+MRPL-KA-104,Habbale,MRPL HiQ,Kodagu,Karnataka,92.11,104.08,"Habbale,Kodagu",2026-09-03 13:28:15
+MRPL-KA-126,Alambadi,MRPL HiQ,Kolar,Karnataka,0.0,0.0,"Alambadi, Kolar",2026-09-03 13:28:15
+MRPL-KA-036,Chikkakadatoor,MRPL HiQ,Kolar,Karnataka,90.71,102.6,"Chikkakadatoor, Kolar",2026-09-03 13:28:15
+MRPL-KA-068,Vemagal,MRPL HiQ,Kolar,Karnataka,90.77,102.67,"Vemagal, Kolar",2026-09-03 13:28:15
+MRPL-KA-054,Cherambane,MRPL HiQ,Madikeri,Karnataka,91.7,103.85,"Cherambane,Madikeri",2026-09-03 13:28:15
+MRPL-KA-038,Bookanakere,MRPL HiQ,Mandya,Karnataka,90.79,102.69,"Bookanakere,Mandya",2026-09-03 13:28:15
+MRPL-KA-120,Devarahalli,MRPL HiQ,Mandya,Karnataka,90.99,102.92,"Devarahalli,Mandya",2026-09-03 13:28:15
+MRPL-KA-099,H.Malligere,MRPL HiQ,Mandya,Karnataka,90.85,102.76,"H.Malligere,Mandya",2026-09-03 13:28:15
+MRPL-KA-028,Hemmanalli,MRPL HiQ,Mandya,Karnataka,91.0,102.92,"Hemmanalli, Mandya",2026-09-03 13:28:15
+MRPL-KA-032,Kadaballi,MRPL HiQ,Mandya,Karnataka,91.16,103.3,"kadaballi, Mandya",2026-09-03 13:28:15
+MRPL-KA-070,Kirangoor,MRPL HiQ,Mandya,Karnataka,90.58,102.46,"Kirangoor,Mandya",2026-09-03 13:28:15
+MRPL-KA-025,Pandavapura,MRPL HiQ,Mandya,Karnataka,90.64,102.52,"Pandavapura, Mandya",2026-09-03 13:28:15
+MRPL-KA-096,Kadakola,MRPL HiQ,Mysore,Karnataka,90.58,102.46,"Kadakola,Mysore",2026-09-03 13:28:15
+MRPL-KA-033,Koorgalli,MRPL HiQ,Mysore,Karnataka,88.58,102.46,Koorgalli-Mysore,2026-09-03 13:28:15
+MRPL-KA-082,Maski,MRPL HiQ,Raichur,Karnataka,91.47,103.28,"Maski ,Raichur",2026-09-03 13:28:15
+MRPL-KA-009,Holaluru,MRPL HiQ,Shimogha,Karnataka,91.87,103.92,"Holaluru,Shimogha",2026-09-03 13:28:15
+MRPL-KA-061,Ripponpet,MRPL HiQ,Shivamogga,Karnataka,91.97,104.06,"Ripponpet, Shivamogga",2026-09-03 13:28:15
+MRPL-KA-071,Thadagani-Shiralkoppa,MRPL HiQ,Shivamogga,Karnataka,92.23,104.31,"Thadagani-Shiralkoppa ,Shivamogga",2026-09-03 13:28:15
+MRPL-KA-089,Chambenahalli,MRPL HiQ,Tumakur,Karnataka,91.96,103.98,"Chambenahalli , Tumakur",2026-09-03 13:28:15
+MRPL-KA-100,Devarajanahalli,MRPL HiQ,Tumakur,Karnataka,91.71,103.59,"Devarajanahalli,Tumakur",2026-09-03 13:28:15
+MRPL-KA-086,Kallambella,MRPL HiQ,Tumakur,Karnataka,91.85,103.86,"Kallambella , tumakur",2026-09-03 13:28:15
+MRPL-KA-105,Vaddarakuppe,MRPL HiQ,Tumakur,Karnataka,91.61,103.6,"Vaddarakuppe,Tumakur",2026-09-03 13:28:15
+MRPL-KA-125,Kadaba,MRPL HiQ,Tumakuru,Karnataka,0.0,0.0,"Kadaba ,Tumakuru",2026-09-03 13:28:15
+MRPL-KA-063,Madhugiri,MRPL HiQ,Tumakuru,Karnataka,91.86,103.87,"Madhugiri,Tumakuru",2026-09-03 13:28:15
+MRPL-KA-076,Yeliyur -Sira,MRPL HiQ,Tumakuru,Karnataka,91.96,103.98,"Yeliyur -Sira , Tumakuru",2026-09-03 13:28:15
+MRPL-KA-013,Gubbi,MRPL HiQ,Tumkur,Karnataka,91.63,103.62,"Gubbi,Tumkur",2026-09-03 13:28:15
+MRPL-KA-047,Heggere,MRPL HiQ,Tumkur,Karnataka,91.58,103.56,"Heggere,Tumkur",2026-09-03 13:28:15
+MRPL-KA-029,Kunigal Circle,MRPL HiQ,Tumkur,Karnataka,91.44,103.41,Kunigal Circle-Tumkur,2026-09-03 13:28:15
+MRPL-KA-095,Nademavinapura,MRPL HiQ,Tumkur,Karnataka,91.55,103.54,"Nademavinapura,Tumkur",2026-09-03 13:28:15
+MRPL-KA-017,Sampige,MRPL HiQ,Tumkur,Karnataka,91.63,103.62,"Sampige, Tumkur",2026-09-03 13:28:15
+MRPL-KA-027,Belman,MRPL HiQ,Udupi,Karnataka,90.36,102.25,"Belman, Udupi",2026-09-03 13:28:15
+MRPL-KA-075,Chitrapady,MRPL HiQ,Udupi,Karnataka,90.7,102.63,"Chitrapady ,Udupi",2026-09-03 13:28:15
+MRPL-KA-020,Dendoorkatte,MRPL HiQ,Udupi,Karnataka,90.38,102.27,"DendoorKatte, Udupi",2026-09-03 13:28:15
+MRPL-KA-064,Guddeangadi,MRPL HiQ,Udupi,Karnataka,90.63,102.55,"Guddeangadi, Udupi",2026-09-03 13:28:15
+MRPL-KA-074,Karkala,MRPL HiQ,Udupi,Karnataka,90.52,102.43,"Karkala ,Udupi",2026-09-03 13:28:15
+MRPL-KA-030,Mandarthi,MRPL HiQ,Udupi,Karnataka,90.71,102.64,"Mandarthi,Udupi",2026-09-03 13:28:15
+MRPL-KA-121,Mudrady,MRPL HiQ,Udupi,Karnataka,90.74,102.74,"Mudrady,Udupi",2026-09-03 13:28:15
+MRPL-KA-046,Sindagi,MRPL HiQ,Vijayapur,Karnataka,90.9,102.79,"Sindagi, Vijayapur",2026-09-03 13:28:15
+MRPL-KL-135,Chala.Kannur,MRPL HiQ,,Kerala,94.73,105.71,Chala.Kannur,2026-09-03 13:28:15
+MRPL-KL-128,Koolimad Kozhikode,MRPL HiQ,,Kerala,94.89,105.89,Koolimad Kozhikode,2026-09-03 13:28:15
+MRPL-KL-158,Aralam,MRPL HiQ,Kannur,Kerala,95.13,106.14,"Aralam ,Kannur",2026-09-03 13:28:15
+MRPL-KL-141,Kalliad,MRPL HiQ,Kannur,Kerala,94.78,105.77,"Kalliad,Kannur",2026-09-03 13:28:15
+MRPL-KL-129,Kothayimukku,MRPL HiQ,Kannur,Kerala,94.98,105.98,"Kothayimukku, Kannur",2026-09-03 13:28:15
+MRPL-KL-153,Kottiyoor,MRPL HiQ,Kannur,Kerala,95.16,106.18,"Kottiyoor ,Kannur",2026-09-03 13:28:15
+MRPL-KL-172,Mattannur,MRPL HiQ,Kannur,Kerala,94.85,105.85,"Mattannur,Kannur",2026-09-03 13:28:15
+MRPL-KL-154,Munderi,MRPL HiQ,Kannur,Kerala,94.73,105.71,"Munderi ,Kannur",2026-09-03 13:28:15
+MRPL-KL-140,Thaliparamba,MRPL HiQ,Kannur,Kerala,94.76,105.75,"Thaliparamba,Kannur",2026-09-03 13:28:15
+MRPL-KL-150,Thayneri,MRPL HiQ,Kannur,Kerala,95.08,106.09,"Thayneri,Kannur",2026-09-03 13:28:15
+MRPL-KL-171,Thillankeri,MRPL HiQ,Kannur,Kerala,95.07,106.08,"Thillankeri,Kannur",2026-09-03 13:28:15
+MRPL-KL-145,Chemmanad,MRPL HiQ,Kasargod,Kerala,95.43,106.46,"Chemmanad, Kasargod",2026-09-03 13:28:15
+MRPL-KL-134,Mangalpady,MRPL HiQ,Kasargod,Kerala,95.76,106.81,"Mangalpady,Kasargod",2026-09-03 13:28:15
+MRPL-KL-148,Atholi,MRPL HiQ,Kozhikode,Kerala,94.78,105.77,"Atholi,Kozhikode",2026-09-03 13:28:15
+MRPL-KL-152,Manipuram,MRPL HiQ,Kozhikode,Kerala,94.92,105.92,"Manipuram ,Kozhikode",2026-09-03 13:28:15
+MRPL-KL-138,Parakkadavu,MRPL HiQ,Kozhikode,Kerala,94.98,105.98,"Parakkadavu,Kozhikode",2026-09-03 13:28:15
+MRPL-KL-159,Payyoli,MRPL HiQ,Kozhikode,Kerala,94.88,105.87,"Payyoli, Kozhikode",2026-09-03 13:28:15
+MRPL-KL-130,Perambara,MRPL HiQ,Kozhikode,Kerala,95.05,106.06,"Perambara, Kozhikode",2026-09-03 13:28:15
+MRPL-KL-142,Thazhekode,MRPL HiQ,Kozhikode,Kerala,94.86,105.85,Thazhekode - Kozhikode,2026-09-03 13:28:15
+MRPL-KL-139,Ulliyeri,MRPL HiQ,Kozhikode,Kerala,94.8,105.79,"Ulliyeri,kozhikode",2026-09-03 13:28:15
+MRPL-KL-136,Areacode,MRPL HiQ,Malappuram,Kerala,95.01,106.02,"Areacode,Malappuram",2026-09-03 13:28:15
+MRPL-KL-162,Areakode-Puthalam,MRPL HiQ,Malappuram,Kerala,95.01,106.02,"Areakode-Puthalam, Malappuram",2026-09-03 13:28:15
+MRPL-KL-133,Chattiparamba,MRPL HiQ,Malappuram,Kerala,95.21,106.23,"Chattiparamba, Malappuram",2026-09-03 13:28:15
+MRPL-KL-164,Chokkad,MRPL HiQ,Malappuram,Kerala,95.37,106.4,"chokkad ,Malappuram",2026-09-03 13:28:15
+MRPL-KL-166,Edavanna,MRPL HiQ,Malappuram,Kerala,95.2,106.22,Edavanna -Malappuram,2026-09-03 13:28:15
+MRPL-KL-147,Edayoor,MRPL HiQ,Malappuram,Kerala,95.65,106.72,"Edayoor,Malappuram",2026-09-03 13:28:15
+MRPL-KL-165,Kariyavattom,MRPL HiQ,Malappuram,Kerala,95.33,106.36,"Kariyavattom ,Malappuram",2026-09-03 13:28:15
+MRPL-KL-161,Kizhuparamba,MRPL HiQ,Malappuram,Kerala,94.92,105.9,"Kizhuparamba ,Malappuram",2026-09-03 13:28:15
+MRPL-KL-168,Melmuri,MRPL HiQ,Malappuram,Kerala,95.24,106.26,"Melmuri,Malappuram",2026-09-03 13:28:15
+MRPL-KL-144,Muthuvallur,MRPL HiQ,Malappuram,Kerala,94.96,105.96,Muthuvallur-Malappuram,2026-09-03 13:28:15
+MRPL-KL-169,Naduva,MRPL HiQ,Malappuram,Kerala,95.0,106.0,"Naduva ,Malappuram",2026-09-03 13:28:15
+MRPL-KL-167,Narukara,MRPL HiQ,Malappuram,Kerala,95.16,106.18,"Narukara,Malappuram",2026-09-03 13:28:15
+MRPL-KL-143,Pandalur,MRPL HiQ,Malappuram,Kerala,95.18,106.2,"Pandalur,Malappuram",2026-09-03 13:28:15
+MRPL-KL-170,Pandikkad,MRPL HiQ,Malappuram,Kerala,95.39,106.42,"Pandikkad,Malappuram",2026-09-03 13:28:15
+MRPL-KL-151,Perakamanna,MRPL HiQ,Malappuram,Kerala,95.13,106.14,"Perakamanna ,Malappuram",2026-09-03 13:28:15
+MRPL-KL-156,Porur,MRPL HiQ,Malappuram,Kerala,95.33,106.36,"Porur ,Malappuram",2026-09-03 13:28:15
+MRPL-KL-131,Pulikkal,MRPL HiQ,Malappuram,Kerala,94.96,105.96,"Pulikkal, Malappuram",2026-09-03 13:28:15
+MRPL-KL-155,Pulmanthole,MRPL HiQ,Malappuram,Kerala,95.69,106.77,"Pulmanthole, Malappuram",2026-09-03 13:28:15
+MRPL-KL-149,Puthanathani,MRPL HiQ,Malappuram,Kerala,95.08,106.09,"Puthanathani,Malappuram",2026-09-03 13:28:15
+MRPL-KL-157,Thanalur,MRPL HiQ,Malappuram,Kerala,95.18,106.2,"Thanalur ,Malappuram",2026-09-03 13:28:15
+MRPL-KL-160,Chungathara,MRPL HiQ,Malapuram,Kerala,95.41,106.44,"Chungathara, Malapuram",2026-09-03 13:28:15
+MRPL-KL-137,Kollappuram,MRPL HiQ,Mallapuram,Kerala,94.96,105.96,"Kollappuram,Mallapuram",2026-09-03 13:28:15
+MRPL-KL-146,Muttil North,MRPL HiQ,Wayanad,Kerala,95.78,106.95,"Muttil North, Wayanad",2026-09-03 13:28:15
+MRPL-KL-132,Pulpally,MRPL HiQ,Wayanad,Kerala,96.0,107.14,"Pulpally, Wayanad",2026-09-03 13:28:15
+MRPL-KL-163,Vettikkattiri,MRPL HiQ,मलप्पुरम,Kerala,95.35,106.4,Vettikkattiri-मलप्पुरम,2026-09-03 13:28:15
+MRPL-TN-005,Moongilthuraipattu,MRPL HiQ,Kallakurichi,Tamil Nadu,0.0,0.0,"Moongilthuraipattu,KALLAKURICHI",2026-09-03 13:28:15
+MRPL-TN-001,Vadasiruvalur,MRPL HiQ,Kallakurichi,Tamil Nadu,94.38,102.79,"Vadasiruvalur,Kallakurichi",2026-09-03 13:28:15
+MRPL-TN-002,Bethakallupalli,MRPL HiQ,Tirupathur,Tamil Nadu,94.22,102.67,"Bethakallupalli,Tirupathur",2026-09-03 13:28:15
+MRPL-TN-003,Thumberi,MRPL HiQ,Tirupathur,Tamil Nadu,94.28,102.74,"Thumberi ,tirupathur",2026-09-03 13:28:15
+MRPL-TN-004,Vallairachal,MRPL HiQ,Tiruppur,Tamil Nadu,0.0,0.0,"Vallairachal,TIRUPPUR",2026-09-03 13:28:15

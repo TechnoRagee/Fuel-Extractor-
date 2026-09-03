@@ -1,14 +1,15 @@
-# ⛽ Fuel Extractor - India Fuel Station Scrapers (Top 7 OMC Networks)
+# ⛽ Fuel Extractor - India Fuel Station Scrapers (Top 8 OMC Networks)
 
 High-performance, resilient scraper and data extraction pipeline for India's major oil marketing companies, organized into autonomous, dedicated folders:
 
 1. **[IOCL/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/IOCL)**: Indian Oil Corporation Limited (~39,555 pumps)
 2. **[BPCL/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/BPCL)**: Bharat Petroleum Corporation Limited (~27,890 pumps)
 3. **[HPCL/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/HPCL)**: Hindustan Petroleum Corporation Limited (~24,026 pumps)
-4. **[JIO-BP/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/JIO-BP)**: Reliance BP Mobility Limited (~2,258 stations)
+4. **[JIO-BP/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/JIO-BP)**: Reliance BP Mobility Limited (All 2,256 stations nationwide)
 5. **[NAYARA/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/NAYARA)**: Nayara Energy (~6,500+ pumps)
 6. **[SHELL/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/SHELL)**: Shell India Retail (All 332 stations nationwide)
 7. **[ESSAR/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/ESSAR)**: Essar Oil (Rebranded to Nayara Energy network)
+8. **[MRPL/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/MRPL)**: Mangalore Refinery and Petrochemicals Limited - ONGC HiQ (All 172 stations)
 
 ---
 
@@ -46,8 +47,8 @@ High-performance, resilient scraper and data extraction pipeline for India's maj
 │   ├── jiobp_db_to_excel.py          # Multi-sheet Excel & CSV exporter
 │   ├── jiobp_discovered_urls.json    # 2,258 pre-indexed station URLs
 │   ├── jiobp_checkpoint.json         # Resumable checkpoint
-│   ├── jiobp_outlets.db              # SQLite database
-│   ├── jiobp_outlets.xlsx            # Formatted Excel report
+│   ├── jiobp_outlets.db              # SQLite database (2,256 records)
+│   ├── jiobp_outlets_master.xlsx     # Formatted Excel report
 │   └── jiobp_outlets.csv             # Formatted CSV dataset
 │
 ├── NAYARA/                           # Nayara Energy
@@ -75,6 +76,14 @@ High-performance, resilient scraper and data extraction pipeline for India's maj
 │   ├── essar_outlets.xlsx            # Formatted Excel report
 │   └── essar_outlets.csv             # Formatted CSV dataset
 │
+├── MRPL/                             # Mangalore Refinery & Petrochemicals (ONGC HiQ)
+│   ├── mrpl_scraper.py               # Main MRPL Playwright scraper (All 172 stations)
+│   ├── mrpl_db_to_excel.py           # Multi-sheet Excel & CSV exporter (MRPL Navy/Gold)
+│   ├── mrpl_checkpoint.json          # Resumable checkpoint
+│   ├── mrpl_outlets.db               # SQLite database (172 records)
+│   ├── mrpl_outlets.xlsx             # Formatted Excel report
+│   └── mrpl_outlets.csv              # Formatted CSV dataset
+│
 ├── README.md                         # Project documentation
 └── .gitignore                        # Git ignore rules
 ```
@@ -84,7 +93,8 @@ High-performance, resilient scraper and data extraction pipeline for India's maj
 ## 🛠️ Installation & Dependencies
 
 ```bash
-pip install pandas openpyxl curl_cffi beautifulsoup4
+pip install pandas openpyxl curl_cffi beautifulsoup4 playwright
+playwright install chromium
 ```
 
 ---
@@ -123,7 +133,7 @@ python hpcl_db_to_excel.py
 ### 4. 🔷 Reliance / Jio-bp
 ```bash
 cd JIO-BP
-python jiobp_scraper.py --workers 8 --delay 0.2
+python jiobp_scraper.py --workers 8 --delay 0.15
 python jiobp_db_to_excel.py
 ```
 
@@ -153,6 +163,16 @@ cd ESSAR
 python essar_scraper.py --workers 4 --delay 0.3
 python essar_db_to_excel.py
 ```
+
+---
+
+### 8. 🔵 MRPL (ONGC HiQ)
+```bash
+cd MRPL
+python mrpl_scraper.py
+python mrpl_db_to_excel.py
+```
+
 
 ---
 
