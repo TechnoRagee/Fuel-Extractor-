@@ -1,4 +1,4 @@
-# ⛽ Fuel Extractor - India Fuel Station Scrapers (Top 5 OMC Networks)
+# ⛽ Fuel Extractor - India Fuel Station Scrapers (Top 7 OMC Networks)
 
 High-performance, resilient scraper and data extraction pipeline for India's major oil marketing companies, organized into autonomous, dedicated folders:
 
@@ -6,7 +6,9 @@ High-performance, resilient scraper and data extraction pipeline for India's maj
 2. **[BPCL/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/BPCL)**: Bharat Petroleum Corporation Limited (~27,890 pumps)
 3. **[HPCL/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/HPCL)**: Hindustan Petroleum Corporation Limited (~24,026 pumps)
 4. **[JIO-BP/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/JIO-BP)**: Reliance BP Mobility Limited (~2,258 stations)
-5. **[NAYARA/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/NAYARA)**: Nayara Energy / Essar Oil (~6,500+ pumps)
+5. **[NAYARA/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/NAYARA)**: Nayara Energy (~6,500+ pumps)
+6. **[SHELL/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/SHELL)**: Shell India Retail (All 332 stations nationwide)
+7. **[ESSAR/](file:///c:/Users/User/OneDrive/Desktop/Fuel%20Extractor/ESSAR)**: Essar Oil (Rebranded to Nayara Energy network)
 
 ---
 
@@ -48,13 +50,30 @@ High-performance, resilient scraper and data extraction pipeline for India's maj
 │   ├── jiobp_outlets.xlsx            # Formatted Excel report
 │   └── jiobp_outlets.csv             # Formatted CSV dataset
 │
-├── NAYARA/                           # Nayara Energy (formerly Essar Oil)
+├── NAYARA/                           # Nayara Energy
 │   ├── nayara_scraper.py             # Main Nayara spatial REST API scraper
 │   ├── nayara_db_to_excel.py         # Multi-sheet Excel & CSV exporter
 │   ├── nayara_checkpoint.json        # Resumable checkpoint
 │   ├── nayara_outlets.db             # SQLite database
 │   ├── nayara_outlets.xlsx           # Formatted Excel report
 │   └── nayara_outlets.csv            # Formatted CSV dataset
+│
+├── SHELL/                            # Shell India
+│   ├── shell_scraper.py              # Main Shell REST API scraper (All 332 stations)
+│   ├── shell_db_to_excel.py          # Multi-sheet Excel & CSV exporter
+│   ├── shell_checkpoint.json         # Resumable checkpoint
+│   ├── shell_outlets.db              # SQLite database (332 records)
+│   ├── shell_outlets.xlsx            # Formatted Excel report (Shell Red/Yellow)
+│   └── shell_outlets.csv             # Formatted CSV dataset
+│
+├── ESSAR/                            # Essar Oil (Rebranded to Nayara Energy)
+│   ├── ESSAR_TO_NAYARA_NOTICE.md     # Full acquisition & rebranding documentation
+│   ├── essar_scraper.py              # Scraper / database sync bridge
+│   ├── essar_db_to_excel.py          # Multi-sheet Excel & CSV exporter (Essar Red/Navy)
+│   ├── essar_checkpoint.json         # Resumable checkpoint
+│   ├── essar_outlets.db              # SQLite database
+│   ├── essar_outlets.xlsx            # Formatted Excel report
+│   └── essar_outlets.csv             # Formatted CSV dataset
 │
 ├── README.md                         # Project documentation
 └── .gitignore                        # Git ignore rules
@@ -115,6 +134,24 @@ python jiobp_db_to_excel.py
 cd NAYARA
 python nayara_scraper.py --workers 4 --delay 0.3
 python nayara_db_to_excel.py
+```
+
+---
+
+### 6. 🟡 Shell India
+```bash
+cd SHELL
+python shell_scraper.py --workers 4 --delay 0.2
+python shell_db_to_excel.py
+```
+
+---
+
+### 7. 🔴 Essar Oil / Nayara
+```bash
+cd ESSAR
+python essar_scraper.py --workers 4 --delay 0.3
+python essar_db_to_excel.py
 ```
 
 ---

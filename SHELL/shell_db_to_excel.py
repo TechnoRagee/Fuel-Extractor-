@@ -1,12 +1,12 @@
 """
-Jio-bp Outlets Database to Excel & CSV Exporter.
-Reads jiobp_outlets.db and exports a multi-sheet formatted Excel file and CSV.
+Shell India Outlets Database to Excel & CSV Exporter.
+Reads shell_outlets.db and exports a multi-sheet formatted Excel file and CSV.
 Features:
 - "All Outlets" master worksheet
-- "State Summary" summary worksheet with state-wise counts, percentages, and district stats
+- "State Summary" summary worksheet with state-wise counts, percentages, and city stats
 - Dedicated individual worksheets for top states
-- Professional Jio-bp Blue styling, auto-adjusted column widths, and gridlines
-- Exports clean jiobp_outlets.csv
+- Professional Shell Red/Yellow styling, auto-adjusted column widths, and gridlines
+- Exports clean shell_outlets.csv
 """
 
 import os
@@ -17,20 +17,19 @@ import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(SCRIPT_DIR, "jiobp_outlets.db")
-EXCEL_PATH = os.path.join(SCRIPT_DIR, "jiobp_outlets.xlsx")
-CSV_PATH = os.path.join(SCRIPT_DIR, "jiobp_outlets.csv")
+DB_PATH = "shell_outlets.db"
+EXCEL_PATH = "shell_outlets.xlsx"
+CSV_PATH = "shell_outlets.csv"
 
-# Styling Palette (Jio-bp Navy/Blue Theme)
-HEADER_FILL = PatternFill(start_color="002D72", end_color="002D72", fill_type="solid")  # Deep Navy Blue
+# Styling Palette (Shell Red/Yellow Theme)
+HEADER_FILL = PatternFill(start_color="DD1D21", end_color="DD1D21", fill_type="solid")  # Shell Red
 HEADER_FONT = Font(name="Segoe UI", size=11, bold=True, color="FFFFFF")
-TITLE_FONT = Font(name="Segoe UI", size=14, bold=True, color="002D72")
+TITLE_FONT = Font(name="Segoe UI", size=14, bold=True, color="DD1D21")
 SUBTITLE_FONT = Font(name="Segoe UI", size=10, italic=True, color="555555")
 DATA_FONT = Font(name="Segoe UI", size=10)
 BOLD_FONT = Font(name="Segoe UI", size=10, bold=True)
-SUMMARY_HEADER_FILL = PatternFill(start_color="0072CE", end_color="0072CE", fill_type="solid") # Electric Blue
-ACCENT_FILL = PatternFill(start_color="F0F7FF", end_color="F0F7FF", fill_type="solid")
+SUMMARY_HEADER_FILL = PatternFill(start_color="B31417", end_color="B31417", fill_type="solid")
+ACCENT_FILL = PatternFill(start_color="FFFDF0", end_color="FFFDF0", fill_type="solid") # Warm Yellow Tint
 
 THIN_BORDER = Border(
     left=Side(style="thin", color="D1D5DB"),
@@ -44,19 +43,17 @@ TOP_THICK_BOTTOM_DOUBLE = Border(
 )
 
 DISPLAY_COLUMNS = {
-    "outlet_id": "Station ID",
-    "station_name": "Brand Name",
-    "dealer_name": "Dealership Name",
-    "state": "State / UT",
-    "city": "District / City",
-    "locality": "Locality / Area",
+    "station_id": "Station ID",
+    "name": "Station Name",
+    "brand": "Brand",
     "street_address": "Street Address",
-    "pincode": "Pincode",
+    "city": "City / Town",
+    "state": "State / UT",
+    "postcode": "Postcode",
+    "telephone": "Phone / Contact",
     "latitude": "Latitude",
     "longitude": "Longitude",
-    "telephone": "Phone / Contact",
-    "rating_value": "Rating",
-    "review_count": "Reviews",
+    "amenities": "Amenities & Services",
     "page_url": "Website URL",
     "created_at": "Extracted At"
 }
@@ -67,8 +64,8 @@ def style_data_sheet(ws, df, sheet_title):
 
     # Title Block
     ws.insert_rows(1, 2)
-    ws.cell(row=1, column=1, value=f"JIO-BP (RELIANCE) — {sheet_title.upper()}").font = TITLE_FONT
-    ws.cell(row=2, column=1, value=f"Total Stations: {len(df):,} | Exported from jiobp_outlets.db").font = SUBTITLE_FONT
+    ws.cell(row=1, column=1, value=f"SHELL INDIA — {sheet_title.upper()}").font = TITLE_FONT
+    ws.cell(row=2, column=1, value=f"Total Stations: {len(df):,} | Exported from shell_outlets.db").font = SUBTITLE_FONT
 
     header_row = 3
 
@@ -93,13 +90,11 @@ def style_data_sheet(ws, df, sheet_title):
                 cell.fill = ACCENT_FILL
 
             col_name = df.columns[c_idx - 1]
-            if col_name in ["Station ID", "Pincode"]:
+            if col_name in ["Station ID", "Postcode"]:
                 cell.alignment = Alignment(horizontal="center", vertical="center")
             elif col_name in ["Latitude", "Longitude"]:
                 cell.alignment = Alignment(horizontal="right", vertical="center")
                 cell.number_format = "0.000000"
-            elif col_name in ["Rating", "Reviews"]:
-                cell.alignment = Alignment(horizontal="right", vertical="center")
             else:
                 cell.alignment = Alignment(horizontal="left", vertical="center")
 
@@ -118,11 +113,11 @@ def build_summary_sheet(wb, df):
     ws.views.sheetView[0].showGridLines = True
 
     # Title Block
-    ws.cell(row=1, column=1, value="JIO-BP (RELIANCE) — STATE-WISE DISTRIBUTION").font = TITLE_FONT
+    ws.cell(row=1, column=1, value="SHELL INDIA — STATE-WISE DISTRIBUTION").font = TITLE_FONT
     ws.cell(row=2, column=1, value=f"Total Stations Extracted: {len(df):,}").font = SUBTITLE_FONT
 
     header_row = 4
-    headers = ["Sr. No.", "State / Union Territory", "Retail Stations", "% Share", "Districts Covered"]
+    headers = ["Sr. No.", "State / Union Territory", "Retail Stations", "% Share", "Cities Covered"]
     for col_idx, h_text in enumerate(headers, 1):
         cell = ws.cell(row=header_row, column=col_idx, value=h_text)
         cell.fill = SUMMARY_HEADER_FILL
@@ -134,7 +129,7 @@ def build_summary_sheet(wb, df):
     # Group data by State
     state_grp = df.groupby("State / UT").agg(
         Count=("Station ID", "count"),
-        Districts=("District / City", "nunique")
+        Cities=("City / Town", "nunique")
     ).reset_index().sort_values(by="Count", ascending=False)
 
     total_count = len(df)
@@ -145,7 +140,7 @@ def build_summary_sheet(wb, df):
         state_name = row["State / UT"] or "Unspecified"
         count = row["Count"]
         pct = (count / total_count) if total_count > 0 else 0
-        districts = row["Districts"]
+        cities = row["Cities"]
 
         ws.cell(row=current_row, column=1, value=sr_no).alignment = Alignment(horizontal="center")
         ws.cell(row=current_row, column=2, value=state_name).alignment = Alignment(horizontal="left")
@@ -157,7 +152,7 @@ def build_summary_sheet(wb, df):
         c4.alignment = Alignment(horizontal="right")
         c4.number_format = "0.0%"
 
-        c5 = ws.cell(row=current_row, column=5, value=districts)
+        c5 = ws.cell(row=current_row, column=5, value=cities)
         c5.alignment = Alignment(horizontal="right")
         c5.number_format = "#,##0"
 
@@ -180,7 +175,7 @@ def build_summary_sheet(wb, df):
     tot_c4.alignment = Alignment(horizontal="right")
     tot_c4.number_format = "0.0%"
 
-    tot_c5 = ws.cell(row=current_row, column=5, value=df["District / City"].nunique())
+    tot_c5 = ws.cell(row=current_row, column=5, value=df["City / Town"].nunique())
     tot_c5.font = BOLD_FONT
     tot_c5.alignment = Alignment(horizontal="right")
     tot_c5.number_format = "#,##0"
@@ -202,11 +197,11 @@ def export_db(db_path=DB_PATH, excel_path=EXCEL_PATH, csv_path=CSV_PATH):
         return
 
     print("=" * 60)
-    print(" EXPORTING JIO-BP DATABASE TO EXCEL & CSV")
+    print(" EXPORTING SHELL INDIA DATABASE TO EXCEL & CSV")
     print("=" * 60)
 
     conn = sqlite3.connect(db_path)
-    df = pd.read_sql_query("SELECT * FROM outlets ORDER BY state, city, locality, station_name", conn)
+    df = pd.read_sql_query("SELECT * FROM outlets ORDER BY state, city, name", conn)
     conn.close()
 
     if df.empty:
@@ -220,16 +215,8 @@ def export_db(db_path=DB_PATH, excel_path=EXCEL_PATH, csv_path=CSV_PATH):
     df.to_csv(csv_path, index=False, encoding="utf-8-sig")
 
     # 2. Export Multi-sheet Excel
-    target_excel = excel_path
-    try:
-        test_f = open(excel_path, "a")
-        test_f.close()
-    except (PermissionError, IOError):
-        target_excel = os.path.join(SCRIPT_DIR, "jiobp_outlets_master.xlsx")
-        print(f"  [!] Note: {excel_path} is currently open in Excel! Saving to: {target_excel}")
-
-    print(f"  * Building Excel Workbook: {target_excel}...")
-    with pd.ExcelWriter(target_excel, engine="openpyxl") as writer:
+    print(f"  * Building Excel Workbook: {excel_path}...")
+    with pd.ExcelWriter(excel_path, engine="openpyxl") as writer:
         df.to_excel(writer, sheet_name="All Outlets", index=False)
 
         top_states = df["State / UT"].value_counts().head(5).index
@@ -240,7 +227,7 @@ def export_db(db_path=DB_PATH, excel_path=EXCEL_PATH, csv_path=CSV_PATH):
             sheet_name = str(state)[:28]
             state_df.to_excel(writer, sheet_name=sheet_name, index=False)
 
-    wb = openpyxl.load_workbook(target_excel)
+    wb = openpyxl.load_workbook(excel_path)
 
     if "All Outlets" in wb.sheetnames:
         style_data_sheet(wb["All Outlets"], df, "All Outlets Master Database")
@@ -255,12 +242,12 @@ def export_db(db_path=DB_PATH, excel_path=EXCEL_PATH, csv_path=CSV_PATH):
 
     build_summary_sheet(wb, df)
 
-    wb.save(target_excel)
+    wb.save(excel_path)
     wb.close()
 
     print("=" * 60)
     print(" [OK] EXPORT COMPLETED SUCCESSFULLY")
-    print(f"  * Master Excel:  {target_excel}")
+    print(f"  * Master Excel:  {excel_path}")
     print(f"  * Master CSV:    {csv_path}")
     print(f"  * Total Records: {len(df):,}")
     print("=" * 60)
